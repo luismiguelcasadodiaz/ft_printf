@@ -22,8 +22,7 @@ int ft_printf(const char *, ...);
 - Don’t implement the buffer management of the original printf().
 - Your function has to handle the following conversions: cspdiuxX%
 - Your function will be compared against the original printf().
-- You must use the command ar to create your library.
--sing the libtool command is forbidden.
+- You must use the command ar to create your library.  Using the libtool command is forbidden.
 - Your libftprintf.a has to be created at the root of your repository.
 
 #### You have to implement the following conversions:
@@ -47,3 +46,25 @@ int ft_printf(const char *, ...);
 
 
 ## Variadic Functions
+
+ariadic functions are functions (e.g. printf) which take a variable number of argument
+
+Variadic functions are functions (e.g. printf) which take a variable number of arguments.
+
+The declaration of a variadic function uses an ellipsis as the last parameter, e.g. int printf(const char* format, ...);. See variadic arguments for additional detail on the syntax and automatic argument conversions.
+
+
+
+
+
+[IBM] (https://www.ibm.com/docs/en/i/7.2?topic=functions-printf-print-formatted-characters)
+
+
+### End of subject Brainfuck challenge
+
+++++++++++[>+>+++>+++++++>++++++++++<<<<-]>>>.>---.++++++++++++.++.+++ +++.--.<<++.>>------.------------.+++++++++++++.<<.>>++++++.------------ .-------. +++++++++++++++++++.<<.>>----------------.+++++.+++++++++.--- ----------.--.+ ++++++++++++++++.--------.+++++++++++++.<<.>>---------- -------------.+++.+++ ++++.---.----.+++++++++++++++++.--------------- --.-.<<.>>+++++.+++++.<<.>-------...
+
+Famous man that directly believed in ???
+
+[help in ](https://www.dcode.fr/brainfuck-language)
+
