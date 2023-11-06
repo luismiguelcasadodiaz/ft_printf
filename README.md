@@ -43,4 +43,7 @@ int ft_printf(const char *, ...);
 - Manage all the following flags: ’# +’ (Yes, one of them is a space)
 
 
+<img width="536" alt="image" src="https://github.com/luismiguelcasadodiaz/ft_printf/assets/19540140/b369eb78-d208-44f9-9a15-5b9809b994a4">
+
+
 ## Variadic Functions
