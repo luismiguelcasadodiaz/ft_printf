@@ -13,10 +13,11 @@ Once this assignment passed, you will be allowed to add your ft_printf() to your
 |Description|Write a library that contains ft_printf(), a function that will mimic the original printf()|
 
 
-
 The prototype of ft_printf() is:
-int ft_printf(const char * , ...);
 
+```c
+int ft_printf(const char * , ...);
+```
 
 ### Here are the requirements:
 - Don’t implement the buffer management of the original printf().
@@ -42,7 +43,17 @@ int ft_printf(const char * , ...);
 - Manage all the following flags: ’# +’ (Yes, one of them is a space)
 
 
+## Format Specifications
+
+We see there are 5 tokens in the format specification flags,width, precision, modifier, type
+
 <img width="536" alt="image" src="https://github.com/luismiguelcasadodiaz/ft_printf/assets/19540140/b369eb78-d208-44f9-9a15-5b9809b994a4">
+
+|level    |arg_number|flags|width|precision| modifier| type|
+|-----    |----------|-----|-----|---------|---------|-----|
+|mandatory|          |     |     |         |         |csp  diuxX %|
+|bonus    |          |# 0 - + ' '     |[[:digit:]] *    |         |         |     |
+|Exist but<br> not use|[[:digit:]]+|-----|-----|.[[:digit:]] * -|hh h l ll L  j t z q v vh hv vl lv vll llv|o DOU eE fF gG aA C S n|
 
 
 ## Variadic Functions
@@ -57,12 +68,15 @@ Accessing the variadic arguments from the function body uses the following libra
 
 The include file <stdarg.h> declares a type (`va_list`) and defines macros [`va_start()`, `va_arg()`, `va_copy()`, and `va_end()`]  for stepping through a list of arguments whose number and types are NOT KNOWN TO THE CALLED FUNCTION.
 
-The called function must declare an object of type `va_list`
+The called function must declare an object of type `va_list`:
 
+```c
 va_list arg_ptr;
-The va_start(arg_ptr, last) macro must be called first, and it initializes argv. Initializes the arg_ptr pointer for subsequent calls to the other functions. Argument `last` refers to the name of the last parameter before the variable argument list, i.e., the last parameter of which the calling function knows the type. `last` it should not be declared as a register variable, or as a function or an array type.
+```
 
-The va_arg() function retrieves a value of the given var_type from the location given by arg_ptr, and increases arg_ptr to point to the next argument in the list. The va_arg() function can retrieve arguments from the list any number of times within the function. The var_type argument must be one of int, long, decimal, double, struct, union, or pointer, or a typedef of one of these types.
+The `va_start(arg_ptr, last)` macro must be called first, and it initializes `arg_ptr`. Initializes the `arg_ptr` pointer for subsequent calls to the other functions. Argument `last` refers to the name of the last parameter before the variable argument list, i.e., the last parameter of which the calling function knows the type. `last` it should not be declared as a register variable, or as a function or an array type.
+
+The `va_arg(arg_ptr, var_type)` function retrieves a value of the given `var_type` from the location given by `arg_ptr`, and increases `arg_ptr` to point to the next argument in the list. The `va_arg()` function can retrieve arguments from the list any number of times within the function. The `var_type` argument must be one of int, long, decimal, double, struct, union, or pointer, or a typedef of one of these types.
 
 Because it is not always possible for the called function to determine how many arguments there are, the calling function should communicate the number of arguments to the called function. To determine the number of arguments, a function can use a null pointer to signal the end of the list or pass the count of the optional arguments as one of the required arguments.
 ``` c
