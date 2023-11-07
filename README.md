@@ -53,7 +53,7 @@ We see there are 5 tokens in the format specification flags,width, precision, mo
 |-----    |----------|-----|-----|---------|---------|-----|
 |mandatory|          |     |     |         |         |csp  diuxX %|
 |bonus    |          |# 0 - + ' '     |[[:digit:]] *    |         |         |     |
-|Exist but<br> not use|[[:digit:]]+|-----|-----|.[[:digit:]] * -|hh h l ll L  j t z q v vh hv vl lv vll llv|o DOU eE fF gG aA C S n|
+|Exist but<br> not requested <br> in this proyect|[[:digit:]]+|     |     |.[[:digit:]] * -|hh h l ll L  j t z q v vh hv vl lv vll llv|o DOU eE fF gG aA C S n|
 
 
 ## Variadic Functions
