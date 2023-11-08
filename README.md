@@ -18,6 +18,7 @@ The prototype of ft_printf() is:
 ```c
 int ft_printf(const char * , ...);
 ```
+`ft_printf()` returns the number of characters printed (not including the trailing `\0' used to end output to strings). Returns a negative value if an error occurs.
 
 ### Here are the requirements:
 - Don’t implement the buffer management of the original printf().
