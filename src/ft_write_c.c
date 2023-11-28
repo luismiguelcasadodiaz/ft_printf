@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   write_c.c                                          :+:      :+:    :+:   */
+/*   ft_write_c.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luicasad <luicasad@student.42barcel>       +#+  +:+       +#+        */
+/*   By: <luicasad@student.42barcelona.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:23:50 by luicasad          #+#    #+#             */
-/*   Updated: 2023/11/07 17:36:10 by luicasad         ###   ########.fr       */
+/*   Updated: 2023/11/26 13:55:36 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int write_c(int fd, char c)
-	return(write(0, c, 1));
+#include "libftprintf.h"
+ssize_t ft_write_c(char c)
+{
+	return (write(FD, &c, 1));
+}
 
 
