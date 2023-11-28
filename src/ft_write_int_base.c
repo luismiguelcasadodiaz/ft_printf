@@ -19,7 +19,12 @@ ssize_t	ft_write_int_base(int num, int base, char *basechars, ssize_t *digits)
 	if (num >= base)
 	{
 		*digits = *digits + 1;
-		return (ft_write_int_base(num / base, base, basechars, digits));
+		result = ft_write_int_base(num / base, base, basechars, digits);
+		pos = num % base;
+		result = ft_write_c(basechars[pos]);
+		if (result == 1)
+			result = *digits + 1;
+	
 	}
 	else
 	{
@@ -27,6 +32,6 @@ ssize_t	ft_write_int_base(int num, int base, char *basechars, ssize_t *digits)
 		result = ft_write_c(basechars[pos]);
 		if (result == 1)
 			result = *digits + 1;
-		return (result);
 	}
+	return (result);
 }
