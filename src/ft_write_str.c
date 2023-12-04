@@ -6,18 +6,17 @@
 /*   By: <luicasad@student.42barcelona.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:23:50 by luicasad          #+#    #+#             */
-/*   Updated: 2023/11/26 13:55:47 by luicasad         ###   ########.fr       */
+/*   Updated: 2023/12/03 21:00:04 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libftprintf.h"
 
-ssize_t ft_write_str(char *str)
+ssize_t	ft_write_str(char *str)
 {
 	ssize_t	result;
 	ssize_t	strlen;
 
 	strlen = 0;
-
 	if (!str)
 		return (strlen);
 	while (str[strlen] != '0')
@@ -27,6 +26,5 @@ ssize_t ft_write_str(char *str)
 			return (result);
 		strlen++;
 	}
-
-	return(strlen);
+	return (strlen);
 }

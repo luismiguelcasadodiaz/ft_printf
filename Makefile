@@ -16,7 +16,10 @@ CFLAGS =  -Wall -Wextra  -Werror
 SRCDIR = src/
 SRCS := src/ft_write_str.c \
         src/ft_write_c.c \
-	src/ft_write_int_base.c
+		src/ft_write_int_base.c \
+		src/ft_write_uns_dec.c \
+		src/ft_write_num_hex.c \
+		src/ft_write_num_HEX.c 
 
 BUILDIR = obj/
 
