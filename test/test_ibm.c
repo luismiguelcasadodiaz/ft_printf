@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   test_ibm.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luicasad <luicasad@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:55:38 by luicasad          #+#    #+#             */
-/*   Updated: 2023/11/06 18:16:53 by luicasad         ###   ########.fr       */
+/*   Updated: 2023/12/05 16:27:36 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>                                               
 #include <stdlib.h>                                              
 #include <locale.h>
-                                                                 
-int main(void)                                                   
+                                              
+int	main(void)                                                   
 {                                                                
-    char ch = 'h', *string = "computer";                         
-    int count = 234, hex = 0x10, oct = 010, dec = 10;            
+    char ch = 'h';
+	char *string = "computer";                         
+    int count = 234i;
+	int hex = 0x10;
+	int oct = 010;
+	int dec = 10;            
     double fp = 251.7366;                                        
     //wchar_t wc = 0x0058;     /* UNICODE X */
     wchar_t wc = (wchar_t)0x0058;                                
@@ -43,7 +47,7 @@ Value of count should be 13; count = 13
           computer                                                    
               comp                                                    
                                                                       
-251.736600    251.74    2.517366e+02    2.517366E+02                  
+251.7366 00    251.74    2.517366e+02    2.517366E+02                  
                                                                       
 16    8     10                                                        
  

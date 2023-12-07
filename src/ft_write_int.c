@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_write_int_base.c                           :+:      :+:    :+:   */
+/*   ft_write_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luicasad <luicasad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 18:18:47 by luicasad          #+#    #+#             */
-/*   Updated: 2023/12/05 18:18:51 by luicasad         ###   ########.fr       */
+/*   Created: 2023/12/03 16:29:41 by luicasad          #+#    #+#             */
+/*   Updated: 2023/12/06 16:00:34 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libftprintf.h"
 
-#include "../src/libftprintf.h"
-#include <stdio.h>
-
-int	main(void)
+ssize_t	ft_write_int(int num)
 {
 	ssize_t	digits;
 
 	digits = 0;
-	printf("<-->%ld<\n", ft_write_int_base(125789, 10, "0123456789", &digits));
-	digits = 0;
-	printf("<-->%ld<\n", ft_write_int_base(-125789, 10, "0123456789", &digits));
-	digits = 0;
-	printf("<-->%ld<\n", ft_write_num_hex(2047));
-	digits = 0;
-	printf("<-->%ld<\n", ft_write_num_HEX(-2047));
-	return (0);
+	return (ft_write_int_base(num, 10, "0123456789", &digits));
 }

@@ -111,6 +111,20 @@ int main(void)
 }
 
 ```
+
+In this exercise, as we have to implement the conversions of cspdiuxX formatters, the data types to pass to va_arg functions are:
+
+|formatter | data type|
+|----------|----------|
+|c|int|
+|s|char *|
+|p|unsigned long|
+|d|int|
+|i|int|
+|u|unsigned int|
+|x|unsigned int|
+|X|unsigned int|
+
 ## Lex
 
 I considered lex like a helper to create a lex analizer for print formated.

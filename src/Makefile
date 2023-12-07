@@ -1,4 +1,4 @@
-#Votre Makefile ne doit pas relink. 
+#otre Makefile ne doit pas relink. 
 # That means that the Makefile should not rebuild all of the targets every time it is run.
 
 NAME = libftprintf.a
@@ -13,16 +13,16 @@ CFLAGS = -g -Wall -Wextra -Werror
 # This technique is forbidden according to 42 Norm point III.11
 #
 # So I must explicitly enumerate files for the project.
-SRCDIR = src/
-SRCS := src/ft_write_str.c \
-        src/ft_write_c.c \
-		src/ft_write_int_base.c \
-		src/ft_write_int.c \
-		src/ft_write_dec.c \
-		src/ft_write_uns.c \
-		src/ft_write_hex_low.c \
-		src/ft_write_hex_cap.c \
-		src/ft_printf.c
+SRCDIR = 
+SRCS := ft_write_str.c \
+        ft_write_c.c \
+		ft_write_int_base.c \
+		ft_write_int.c \
+		ft_write_dec.c \
+		ft_write_uns.c \
+		ft_write_hex_low.c \
+		ft_write_hex_cap.c \
+		ft_printf.c
 
 BUILDIR = obj/
 
@@ -39,17 +39,17 @@ $(info $(OBJS))
 all: $(NAME)
 
 
-$(NAME): $(OBJS) Makefile src/ibftprintf.h
+$(NAME): $(OBJS)
 	@echo "================ GATHERING ALL OBJECTS ====================="
 	ar rcs $(NAME) $?
 
 
 # For each c file create its object file.
 
-%.o: %.c Makefile src/ibftprintf.h
+%.o: %.c Makefile libftprintf.h
 	@echo "================ COMPILING ALL OBJECTS ====================="
 	$(info $@)
-	$(CC) $(CFLAGS) -c $< -o $@ 
+	$(CC) $(CFLAGS) -c $< -o $@
 
 # removes all generated object files
 clean:
