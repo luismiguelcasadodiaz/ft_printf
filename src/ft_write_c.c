@@ -9,7 +9,7 @@
 /*   Updated: 2023/12/03 21:02:21 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 ssize_t	ft_write_c(char c)
 {

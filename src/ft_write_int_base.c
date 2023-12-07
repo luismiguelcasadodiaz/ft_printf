@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 ssize_t	ft_write_neg(int num, int base, char *basechars, ssize_t *digits)
 {

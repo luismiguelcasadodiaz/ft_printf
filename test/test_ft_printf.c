@@ -6,7 +6,7 @@
 /*   By: luicasad <luicasad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:30:16 by luicasad          #+#    #+#             */
-/*   Updated: 2023/12/07 00:59:55 by luicasad         ###   ########.fr       */
+/*   Updated: 2023/12/07 20:05:11 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,128 @@ int	main(void)
 	char			*s = "@@@";
 	char			*s2 = NULL;
 
+	printf("============== testing %%       ====================\n");
+	printf("1.-<");
+	el = printf(" %% ");
+	yo = ft_printf(" %% ");
+	printf("EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	printf("2.-<");
+	el = printf(" %%%% ");
+	yo = ft_printf(" %%%% ");
+	printf("EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	printf("3.-<");
+	el = printf(" %% %% %% ");
+	yo = ft_printf(" %% %% %% ");
+	printf("EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	printf("4.-<");
+	el = printf(" %%  %%  %% ");
+	yo = ft_printf(" %%  %%  %% ");
+	printf("EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	printf("5.-<");
+	el = printf(" %%   %%   %% ");
+	yo = ft_printf(" %%   %%   %% ");
+	printf("EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	printf("6.-<");
+	el = printf("%%");
+	yo = ft_printf("%%");
+	printf("EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	printf("7.-<");
+	el = printf("%% %%");
+	yo = ft_printf("%% %%");
+	printf("EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	printf("============== testing ONLY c ====================\n");
+	printf("1.-<");
+	el = printf("%c", '0');
+	printf("><");
+	yo = ft_printf("%c", '0');
+	printf(">EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	printf("2.-<");
+	el = printf(" %c ", '0');
+	printf("><");
+	yo = ft_printf(" %c ", '0');
+	printf(">EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	printf("3.-<");
+	el = printf(" %c", '0' - 256);
+	printf("><");
+	yo = ft_printf(" %c", '0' - 256);
+	printf(">EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	printf("4.-<");
+	el = printf("%c ", '0' + 256);
+	printf("><");
+	yo = ft_printf("%c ", '0' + 256);
+	printf(">EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	printf("5.-<");
+	el = printf(" %c %c %c ", '0', 0, '1');
+	printf("><");
+	yo = ft_printf(" %c %c %c ", '0', 0, '1');
+	printf(">EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	printf("6.-<");
+	el = printf(" %c %c %c ", ' ', ' ', ' ');
+	printf("><");
+	yo = ft_printf(" %c %c %c ", ' ', ' ', ' ');
+	printf(">EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	printf("7.-<");
+	el = printf(" %c %c %c ", '1', '2', '3');
+	printf("><");
+	yo = ft_printf(" %c %c %c ", '1', '2', '3');
+	printf(">EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	printf("8.-<");
+	el = printf(" %c %c %c ", '2', '1', 0);
+	printf("><");
+	yo = ft_printf(" %c %c %c ", '2', '1', 0);
+	printf(">EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	printf("9.-<");
+	el = printf(" %c %c %c ", 0, '1', '2');
+	printf("><");
+	yo = ft_printf(" %c %c %c ", 0, '1', '2');
+	printf(">EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
 	printf("============== testing s and c ====================\n");
 	el = printf("EL %%> Mi nombre es %s y mi letra es %c.\n", test_str, 'L');
 	yo = ft_printf("YO %%> Mi nombre es %s y mi letra es %c.\n", test_str, 'L');

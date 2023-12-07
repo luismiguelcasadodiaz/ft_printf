@@ -9,7 +9,7 @@
 /*   Updated: 2023/12/07 09:19:30 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libftprintf.h"
+#include "ft_printf.h"
 #include <stdarg.h>
 
 ssize_t	analiza(char c, va_list args)

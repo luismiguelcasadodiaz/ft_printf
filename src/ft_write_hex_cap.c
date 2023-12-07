@@ -9,7 +9,7 @@
 /*   Updated: 2023/12/05 16:36:35 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 ssize_t	ft_write_hex_cap(int num)
 {
