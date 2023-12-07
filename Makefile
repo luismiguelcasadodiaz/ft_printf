@@ -39,14 +39,14 @@ $(info $(OBJS))
 all: $(NAME)
 
 
-$(NAME): $(OBJS) Makefile src/ibftprintf.h
+$(NAME): $(OBJS) Makefile src/lbftprintf.h
 	@echo "================ GATHERING ALL OBJECTS ====================="
 	ar rcs $(NAME) $?
 
 
 # For each c file create its object file.
 
-%.o: %.c Makefile src/ibftprintf.h
+%.o: %.c Makefile src/lbftprintf.h
 	@echo "================ COMPILING ALL OBJECTS ====================="
 	$(info $@)
 	$(CC) $(CFLAGS) -c $< -o $@ 

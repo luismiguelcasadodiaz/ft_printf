@@ -6,7 +6,7 @@
 /*   By: luicasad <luicasad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:39:17 by luicasad          #+#    #+#             */
-/*   Updated: 2023/12/06 19:49:22 by luicasad         ###   ########.fr       */
+/*   Updated: 2023/12/07 09:19:30 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libftprintf.h"
@@ -15,7 +15,7 @@
 ssize_t	analiza(char c, va_list args)
 {
 	if (c == '%')
-		return (ft_write_c('%'));
+		return (ft_write_c(37));
 	if (c == 'c')
 		return (ft_write_c(va_arg(args, int)));
 	if (c == 's')
