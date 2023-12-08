@@ -11,10 +11,12 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-ssize_t	ft_write_hex_cap(int num)
+ssize_t	ft_write_hex_cap(unsigned int num)
 {
-	ssize_t	digits;
+	ssize_t			digits;
+	unsigned long	my_num;
 
+	my_num = (unsigned long)num;
 	digits = 0;
-	return (ft_write_int_base(num, 16, "0123456789ABCDEF", &digits));
+	return (ft_write_uns_base(my_num, 16, "0123456789ABCDEF", &digits));
 }

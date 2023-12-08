@@ -17,6 +17,8 @@ SRCDIR =
 SRCS := ft_write_str.c \
         ft_write_c.c \
 		ft_write_int_base.c \
+		ft_write_uns_base.c \
+		ft_write_ptr.c \
 		ft_write_int.c \
 		ft_write_dec.c \
 		ft_write_uns.c \
@@ -46,7 +48,7 @@ $(NAME): $(OBJS)
 
 # For each c file create its object file.
 
-%.o: %.c Makefile libftprintf.h
+%.o: %.c Makefile ft_printf.h
 	@echo "================ COMPILING ALL OBJECTS ====================="
 	$(info $@)
 	$(CC) $(CFLAGS) -c $< -o $@

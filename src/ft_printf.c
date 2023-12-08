@@ -27,7 +27,7 @@ ssize_t	analiza(char c, va_list args)
 	if (c == 'u')
 		return (ft_write_uns(va_arg(args, unsigned int)));
 	if (c == 'p')
-		return (ft_write_c(va_arg(args, unsigned long)));
+		return (ft_write_ptr(va_arg(args, void *)));
 	if (c == 'x')
 		return (ft_write_hex_low(va_arg(args, unsigned int)));
 	if (c == 'X')

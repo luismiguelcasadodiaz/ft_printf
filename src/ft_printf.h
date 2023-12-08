@@ -19,10 +19,15 @@
 ssize_t	ft_write_c(char c);
 ssize_t	ft_write_str(char *str);
 ssize_t	ft_write_int_base(int num, int base, char *basechars, ssize_t *digits);
+ssize_t	ft_write_uns_base(unsigned long long    n,
+            unsigned long long  b,
+        char     *c,
+    ssize_t  *d);
 ssize_t	ft_write_dec(int num);
 ssize_t	ft_write_int(int num);
+ssize_t	ft_write_ptr(void *num);
 ssize_t	ft_write_uns(unsigned int num);
-ssize_t	ft_write_hex_low(int num);
-ssize_t	ft_write_hex_cap(int num);
+ssize_t	ft_write_hex_low(unsigned int num);
+ssize_t	ft_write_hex_cap(unsigned int num);
 int		ft_printf(const char *fmt, ...)__attribute__((format (printf, 1, 2)));
 #endif

@@ -14,9 +14,7 @@
 ssize_t	ft_write_uns(unsigned int num)
 {
 	ssize_t	digits;
-	int		my_num;
 
-	my_num = (int)num;
 	digits = 0;
-	return (ft_write_int_base(my_num, 10, "0123456789", &digits));
+	return (ft_write_uns_base(num, 10, "0123456789", &digits));
 }
