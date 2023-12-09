@@ -6,13 +6,14 @@
 /*   By: luicasad <luicasad@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 09:13:08 by luicasad          #+#    #+#             */
-/*   Updated: 2023/12/09 09:26:34 by luicasad         ###   ########.fr       */
+/*   Updated: 2023/12/09 10:49:32 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 
 # define FD 1
 
@@ -29,5 +30,6 @@ ssize_t	ft_write_ptr(void *num);
 ssize_t	ft_write_uns(unsigned int num);
 ssize_t	ft_write_hex_low(unsigned int num);
 ssize_t	ft_write_hex_cap(unsigned int num);
-int		ft_printf(const char *fmt, ...)__attribute__((format (printf, 1, 2)));
+int		ft_printf(const char *fmt, ...);
+//int	ft_printf(const char *fmt, ...)__attribute__((format (printf, 1, 2)));
 #endif

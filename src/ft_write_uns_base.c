@@ -6,7 +6,7 @@
 /*   By: luicasad <luicasad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 21:02:55 by luicasad          #+#    #+#             */
-/*   Updated: 2023/12/09 09:23:00 by luicasad         ###   ########.fr       */
+/*   Updated: 2023/12/09 12:37:29 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ ssize_t	ft_write_uns_neg(unsigned long long n,
 
 	if (n <= -b)
 	{
-		ft_write_uns_neg(n / b, b, c, d);
+		if (ft_write_uns_neg(n / b, b, c, d) == -1)
+			return (-1);
 	}
 	pos = n % b;
 	if (write(FD, &c[-pos], 1) != 1)
@@ -45,7 +46,8 @@ ssize_t	ft_write_uns_pos(unsigned long long n,
 
 	if (n >= b)
 	{
-		ft_write_uns_pos(n / b, b, c, d);
+		if (ft_write_uns_pos(n / b, b, c, d) == -1)
+			return (-1);
 	}
 	pos = n % b;
 	if (write(FD, &c[pos], 1) != 1)
@@ -89,7 +91,10 @@ ssize_t	ft_write_uns_base(unsigned long long n,
 {
 	ssize_t	result;
 
-	result = ft_write_uns_pos(n, b, c, d);
+	if (0 <= n & n <= ULONG_LONG_MAX)
+		result = ft_write_uns_pos(n, b, c, d);
+	else
+		return (-1);
 	if (0 < result)
 		result = *d;
 	return (result);

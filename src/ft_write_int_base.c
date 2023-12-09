@@ -6,25 +6,27 @@
 /*   By: luicasad <luicasad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 21:02:55 by luicasad          #+#    #+#             */
-/*   Updated: 2023/12/09 09:35:57 by luicasad         ###   ########.fr       */
+/*   Updated: 2023/12/09 12:38:16 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-ssize_t	ft_write_neg(int num, int base, char *basechars, ssize_t *digits)
+static ssize_t	ft_win(int num, int base, char *basechars, ssize_t *digits)
 {
 	size_t	pos;
 	ssize_t	result;
 
 	if (num <= -base)
 	{
-		ft_write_neg(num / base, base, basechars, digits);
+		if (ft_win(num / base, base, basechars, digits) == -1)
+			return (-1);
 	}
 	pos = num % base;
-	if (write(FD, &basechars[-pos], 1) != 1)
+	result = write(FD, &basechars[-pos], 1);
+	if (result == -1)
 		return (-1);
-	else
+	else if (result == 1)
 	{
 		*digits = *digits + 1;
 		result = *digits;
@@ -32,19 +34,21 @@ ssize_t	ft_write_neg(int num, int base, char *basechars, ssize_t *digits)
 	return (result);
 }
 
-ssize_t	ft_write_pos(int num, int base, char *basechars, ssize_t *digits)
+static ssize_t	ft_wip(int num, int base, char *basechars, ssize_t *digits)
 {
 	size_t	pos;
 	ssize_t	result;
 
 	if (num >= base)
 	{
-		ft_write_pos(num / base, base, basechars, digits);
+		if (ft_wip(num / base, base, basechars, digits) == -1)
+			return (-1);
 	}
 	pos = num % base;
-	if (write(FD, &basechars[pos], 1) != 1)
+	result = write(FD, &basechars[pos], 1);
+	if (result == -1)
 		return (-1);
-	else
+	else if (result == 1)
 	{
 		*digits = *digits + 1;
 		result = *digits;
@@ -82,15 +86,17 @@ ssize_t	ft_write_int_base(int num, int base, char *basechars, ssize_t *digits)
 {
 	ssize_t	result;
 
-	if (0 <= num)
-		result = ft_write_pos(num, base, basechars, digits);
-	else
+	if (0 <= num & num <= INT_MAX)
+		result = ft_wip(num, base, basechars, digits);
+	else if (INT_MIN <= num)
 	{
 		if (write(FD, "-", 1) != 1)
 			return (-1);
 		*digits = *digits + 1;
-		result = ft_write_neg(num, base, basechars, digits);
+		result = ft_win(num, base, basechars, digits);
 	}
+	else
+		return (-1);
 	if (0 < result)
 		result = *digits;
 	return (result);

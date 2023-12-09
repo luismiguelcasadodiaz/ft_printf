@@ -6,7 +6,7 @@
 /*   By: luicasad <luicasad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:30:16 by luicasad          #+#    #+#             */
-/*   Updated: 2023/12/09 09:25:57 by luicasad         ###   ########.fr       */
+/*   Updated: 2023/12/09 12:09:52 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 
 int	main(void)
 {
-	char			*test_str = "Luis Miguel";
+//	char			*test_str = "Luis Miguel";
 	int				yo;
 	int				el;
-	char			c;
+/*	char			c;
 	char			d;
 	unsigned int	u;
 	int				num;
@@ -326,17 +326,12 @@ int	main(void)
 	// el = printf("%8p-%8s\n", NULL, s2);
 	// yo = ft_printf("%8p-%8s\n", NULL, s2);
 	// printf(" EL %d, YO %d\n", el , yo);
-
-	el = printf("%p-%s\n", NULL, s2);
-	yo = ft_printf("%p-%s\n", NULL, s2);
-	printf("EL %d, YO %d ", el , yo);
+*/
+	el = printf("%d\n", 10);
+//	printf("%d\n",INT_MIN);
+	yo = ft_printf("%d\n", 10);
+	printf( "EL %d YO %d ", el, yo);
 	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
 	printf("\033[0m\n");
-	el = printf("printf : a%pbc%%de%cfg%uhij%sk%dlm%inop%Xq%xr\n", (void *)&c, d, u, s, num, 0, u, u);
-	yo = ft_printf("ftprint: a%pbc%%de%cfg%uhij%sk%dlm%inop%Xq%xr\n", (void *)&c, d, u, s, num, 0, u, u);
-	printf("EL %d, YO %d ", el , yo);
-	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
-	printf("\033[0m\n");
-	printf(" EL %d, YO %d\n", el , yo);
 	return (0);
 }

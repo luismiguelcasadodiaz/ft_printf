@@ -6,7 +6,7 @@
 /*   By: luicasad <luicasad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:39:17 by luicasad          #+#    #+#             */
-/*   Updated: 2023/12/09 09:32:16 by luicasad         ###   ########.fr       */
+/*   Updated: 2023/12/09 10:05:06 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -57,7 +57,7 @@ int	ft_printf(const char *fmt, ...)
 		}
 		i++;
 		if (result < 0)
-			return (result);
+			return (-1);
 		tot_chars = tot_chars + result;
 	}
 	va_end(args);
