@@ -6,7 +6,7 @@
 /*   By: luicasad <luicasad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 21:02:55 by luicasad          #+#    #+#             */
-/*   Updated: 2023/12/07 09:12:43 by luicasad         ###   ########.fr       */
+/*   Updated: 2023/12/09 09:23:00 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ ssize_t	ft_write_uns_neg(unsigned long long n,
 	return (result);
 }
 
-ssize_t	ft_write_uns_pos(unsigned long n, unsigned long b, char *c, ssize_t *d)
+ssize_t	ft_write_uns_pos(unsigned long long n,
+						unsigned long long b,
+						char *c,
+						ssize_t *d)
 {
 	size_t	pos;
 	ssize_t	result;
@@ -63,10 +66,10 @@ ssize_t	ft_write_uns_pos(unsigned long n, unsigned long b, char *c, ssize_t *d)
 /*  one for negative numbers                                                  */
 /*                                                                            */
 /*  GETS                                                                      */
-/*   unsigned int  n            Num to transform into chars if a base         */
-/*   unsigned int  b            Base of num (10 decimal, 16,  octal           */
-/*   char          *c           set of char the base is made of               */
-/*   ssize_t       *d           passed by ref int. Returns num printed chars  */
+/*   unsigned long long n       Num to transform into chars if a base         */
+/*   unsigned long long n       Base of num (10 decimal, 16,  octal           */
+/*   char               *c      set of char the base is made of               */
+/*   ssize_t            *d      passed by ref int. Returns num printed chars  */
 /*                                                                            */
 /*  RETURNS                                                                   */
 /*    number of printed digits                                                */

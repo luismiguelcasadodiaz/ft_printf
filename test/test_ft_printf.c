@@ -6,12 +6,13 @@
 /*   By: luicasad <luicasad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 22:30:16 by luicasad          #+#    #+#             */
-/*   Updated: 2023/12/08 17:39:09 by luicasad         ###   ########.fr       */
+/*   Updated: 2023/12/09 09:25:57 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../src/libftprintf.h"
+#include "../src/ft_printf.h"
 #include <stdio.h>
+#include <limits.h>
 
 int	main(void)
 {
@@ -22,6 +23,7 @@ int	main(void)
 	char			d;
 	unsigned int	u;
 	int				num;
+	int				*pint;
 	char			*s = "@@@";
 	char			*s2 = NULL;
 
@@ -263,7 +265,50 @@ int	main(void)
 	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
 	printf("\033[0m\n");
 	printf("-------------- frontier cases --------------------\n");
-	printf("============== testing i , d and u ====================\n");
+	printf("============== testing p      ====================\n");
+
+	num = -10;
+	pint = &num;
+	el =    printf("two is  %p\n", pint);
+	yo = ft_printf("two is  %p\n", pint);
+	printf("EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+
+
+	el = printf(" %p \n", -1);
+	yo = ft_printf(" %p \n", -1);
+	printf("EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	el =printf(" %p \n", 15);
+	yo = ft_printf(" %p \n", 15);
+	printf("EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	el = printf(" %p %p \n", LONG_MIN, LONG_MAX);
+	yo = ft_printf(" %p %p \n", LONG_MIN, LONG_MAX);
+	printf("EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	el = printf(" %p %p \n", INT_MIN, INT_MAX);
+	yo = ft_printf(" %p %p \n", INT_MIN, INT_MAX);
+	printf("EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+	el = printf(" %p %p \n", ULONG_MAX, -ULONG_MAX);
+	yo = ft_printf(" %p %p \n", ULONG_MAX, -ULONG_MAX);
+	printf("EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
+
+
+
 	c = 'a';
 	d = 'b';
 	num = 0x7FFFFFFF;
@@ -284,9 +329,14 @@ int	main(void)
 
 	el = printf("%p-%s\n", NULL, s2);
 	yo = ft_printf("%p-%s\n", NULL, s2);
-	printf(" EL %d, YO %d\n", el , yo);
+	printf("EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
 	el = printf("printf : a%pbc%%de%cfg%uhij%sk%dlm%inop%Xq%xr\n", (void *)&c, d, u, s, num, 0, u, u);
 	yo = ft_printf("ftprint: a%pbc%%de%cfg%uhij%sk%dlm%inop%Xq%xr\n", (void *)&c, d, u, s, num, 0, u, u);
+	printf("EL %d, YO %d ", el , yo);
+	printf( (el != yo) ? "<\033[1;91mKO": "<\033[1;92mOK");
+	printf("\033[0m\n");
 	printf(" EL %d, YO %d\n", el , yo);
 	return (0);
 }

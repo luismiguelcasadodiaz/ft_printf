@@ -6,7 +6,7 @@
 /*   By: luicasad <luicasad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:39:17 by luicasad          #+#    #+#             */
-/*   Updated: 2023/12/07 09:19:30 by luicasad         ###   ########.fr       */
+/*   Updated: 2023/12/09 09:32:16 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -29,7 +29,7 @@ ssize_t	analiza(char c, va_list args)
 	if (c == 'p')
 		return (ft_write_ptr(va_arg(args, void *)));
 	if (c == 'x')
-		return (ft_write_hex_low(va_arg(args, unsigned int)));
+		return (ft_write_hex_low(va_arg(args, int)));
 	if (c == 'X')
 		return (ft_write_hex_cap(va_arg(args, unsigned int)));
 	return (0);
