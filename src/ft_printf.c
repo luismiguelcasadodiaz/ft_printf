@@ -6,14 +6,35 @@
 /*   By: luicasad <luicasad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:39:17 by luicasad          #+#    #+#             */
-/*   Updated: 2023/12/09 10:05:06 by luicasad         ###   ########.fr       */
+/*   Updated: 2023/12/10 10:47:06 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 #include <stdarg.h>
 
-ssize_t	analiza(char c, va_list args)
+/* ************************************************************************** */
+/* analiza() calls the right function  with the right argument according to   */
+/* the value of c.                                                            */
+/*                                                                            */
+/* GETS:                                                                      */
+/* char c : the formater char that defines the funcion to print and the type  */
+/*          to cast the argument to.                                          */
+/*                                                                            */
+/* OPERATES:                                                                  */
+/* Only chars csdiupxX% select a function.                                    */
+/* if %, a % has to be printed. 37 is the ascii value of %.                   */
+/*                                                                            */
+/*                                                                            */
+/* RETURNS:                                                                   */
+/* 0 when char is not in csdiupxX%.                                           */
+/* The returned value from called function.                                   */
+/*                                                                            */
+/* ************************************************************************** */
+ssize_t	analiza(const char *fmt, size_t *i, va_list args)
 {
+	char	c;
+
+	c = fmt[*i + 1];
 	if (c == '%')
 		return (ft_write_c(37));
 	if (c == 'c')
@@ -35,6 +56,24 @@ ssize_t	analiza(char c, va_list args)
 	return (0);
 }
 
+/* ************************************************************************** */
+/* ft_printf() is a variadic functions that emulates printf() from stdio.h    */
+/*                                                                            */
+/* GETS                                                                       */
+/*  *fmt is a pointe to a string with formaters that start by %               */
+/*  ...  an undefined number of arguments                                     */
+/*                                                                            */
+/* RETURNS:                                                                   */
+/*  The number of printed chars when sucess, -1 when fails                    */
+/*                                                                            */
+/* OPERATES:                                                                  */
+/*  Initializes the treatement of the arguments starting after fmt.           */
+/*                                                                            */
+/*  Loops fmt printing, char by char, whatever different from %.              */
+/*  When % shows up analizes next char                                        */
+/*                                                                            */
+/*  Ends the treatment of the arguments starting after fmt                    */
+/* ************************************************************************** */
 int	ft_printf(const char *fmt, ...)
 {
 	int		tot_chars;
@@ -52,7 +91,7 @@ int	ft_printf(const char *fmt, ...)
 			result = ft_write_c(fmt[i]);
 		else
 		{
-			result = analiza(fmt[i + 1], args);
+			result = analiza(fmt, &i, args);
 			i++;
 		}
 		i++;

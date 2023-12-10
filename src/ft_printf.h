@@ -6,7 +6,7 @@
 /*   By: luicasad <luicasad@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 09:13:08 by luicasad          #+#    #+#             */
-/*   Updated: 2023/12/09 10:49:32 by luicasad         ###   ########.fr       */
+/*   Updated: 2023/12/10 08:54:19 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_PRINTF_H
@@ -14,6 +14,14 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+
+# ifdef __linux__
+#  define MY_SYMBOL 1
+#  define MY_ULL_MAX ULLONG_MAX
+# elif __APPLE__
+#  define MY_SYMBOL 2
+#  define MY_ULL_MAX ULONG_LONG_MAX
+# endif
 
 # define FD 1
 
@@ -33,3 +41,8 @@ ssize_t	ft_write_hex_cap(unsigned int num);
 int		ft_printf(const char *fmt, ...);
 //int	ft_printf(const char *fmt, ...)__attribute__((format (printf, 1, 2)));
 #endif
+/* ************************************************************************** */
+/* A function suffix like "__attribute__((format (printf, 1, 2)))" instruct   */
+/* the compiler to check inconsistencies between variable arguments and the   */
+/* format instrunction.                                                       */
+/* ************************************************************************** */

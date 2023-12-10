@@ -4,38 +4,38 @@ ft_printf
 		write
 	analiza
 		
-		ft_write_c(37));
+	%	t_write_c(37));
 			write
-		ft_write_c(va_arg(args, int)));
+	c	t_write_c(va_arg(args, int)));
 			write
-		ft_write_str(va_arg(args, char *)));
+	s	t_write_str(va_arg(args, char *)));
 			write
-		ft_write_dec(va_arg(args, int)));
+	d	t_write_dec(va_arg(args, int)));
 			ft_write_int_base(int
-				ft_write_pos(int
+				ft_wip(int
 					write
-				ft_write_neg(int
+				ft_win(int
 					write
-		ft_write_int(va_arg(args, int)));
+	i	t_write_int(va_arg(args, int)));
 			ft_write_int_base(int
-				ft_write_pos(int
+				ft_wip(int
 					write
-				ft_write_neg(int
+				ft_win(int
 					write
-		ft_write_uns(va_arg(args, unsigned int)));
-			ft_write_uns_base(uns long long
-				ft_write_uns_pos( uns long long
+	u	t_write_uns(va_arg(args, unsigned int)));
+			ft_write_uns_base(unsigned long long
+				ft_wup(unsigned long long
 					write
-		ft_write_ptr(va_arg(args, void *)));
-			ft_write_uns_base
-				ft_write_uns_pos( uns long long
+	p	t_write_ptr(va_arg(args, void *)));
+			ft_write_uns_base(unsigned long long
+				ft_wup(unsigned long long
 					write
-		ft_write_hex_low(va_arg(args, unsigned int)));
-			ft_write_uns_base
-				ft_write_uns_pos( uns long long
+	x	t_write_hex_low(va_arg(args, unsigned int)));
+			ft_write_uns_base(unsigned long long
+				ft_wup(unsigned long long
 					write
-		ft_write_hex_cap(va_arg(args, unsigned int)));
-			ft_write_uns_base
-				ft_write_uns_pos( uns long long
+	X	t_write_hex_cap(va_arg(args, unsigned int)));
+			ft_write_uns_base(unsigned long long
+				ft_wup(unsigned long long
 					write
 	va_end

@@ -6,11 +6,27 @@
 /*   By: <luicasad@student.42barcelona.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:23:50 by luicasad          #+#    #+#             */
-/*   Updated: 2023/12/06 14:58:37 by luicasad         ###   ########.fr       */
+/*   Updated: 2023/12/10 08:51:27 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
+/* ************************************************************************** */
+/* ft_write_str() prints decimal numbers                                      */
+/*                                                                            */
+/* GETS:                                                                      */
+/* char *str: The string to printº                                            */
+/*                                                                            */
+/* OPERATES:                                                                  */
+/* if the pointer is null , prints "(null)"                                   */
+/*                                                                            */
+/* Loops the string pirnting each characters. If problems exists loop         */
+/*                                                                            */
+/* During each loop iteration increasr char counter strlen.                   */
+/*                                                                            */
+/* RETURNS:                                                                   */
+/* The length of the printed string when suceed, -1 when fails                */
+/* ************************************************************************** */
 ssize_t	ft_write_str(char *str)
 {
 	ssize_t	result;
