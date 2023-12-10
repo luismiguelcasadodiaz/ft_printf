@@ -125,6 +125,27 @@ In this exercise, as we have to implement the conversions of cspdiuxX formatters
 |x|unsigned int|
 |X|unsigned int|
 
+A comment about unsigned long long (64 bits) for pointers.
+
+|type|bits|CONSTANT MAX| Value MAX|
+|:------------------|:---:|-------:|---------|
+|unsigned long long| 64 |ULLONG_MAX|18 446 744 073 709 551 615|
+|unsigned long| 32 |ULONG_MAX|4 294 967 295|
+|unsigned int| 16 |UINT_MAX|65 535|
+
+
+Bytes of memory each pointer type can address.
+
+|unsigned int|unsigned long|unsigned long long|unit|
+|-------:|------------:|-------------------------:|:------:|
+|65 535|4 294 967 295|18 446 744 073 709 551 615| bytes| 
+|64|4 194 303|1 801 439 850 9481 983| KBytes|
+|-|4 095|17 592 186 044 415| MBytes|
+|-|4|17 179 869 183| GBytes|
+|-|-|16 777 215| TBytes|
+|-|-|16 383| PBytes|
+|-|-|16| EBytes|
+
 ## My first approach Lex
 
 I considered lex like a helper to create a lex analizer for print formated.
