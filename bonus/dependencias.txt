@@ -1,0 +1,41 @@
+ft_printf
+	va_start
+	ft_write_c
+		write
+	analiza
+		
+	%	t_write_c(37));
+			write
+	c	t_write_c(va_arg(args, int)));
+			write
+	s	t_write_str(va_arg(args, char *)));
+			write
+	d	t_write_dec(va_arg(args, int)));
+			ft_write_int_base(int
+				ft_wip(int
+					write
+				ft_win(int
+					write
+	i	t_write_int(va_arg(args, int)));
+			ft_write_int_base(int
+				ft_wip(int
+					write
+				ft_win(int
+					write
+	u	t_write_uns(va_arg(args, unsigned int)));
+			ft_write_uns_base(unsigned long long
+				ft_wup(unsigned long long
+					write
+	p	t_write_ptr(va_arg(args, void *)));
+			ft_write_uns_base(unsigned long long
+				ft_wup(unsigned long long
+					write
+	x	t_write_hex_low(va_arg(args, unsigned int)));
+			ft_write_uns_base(unsigned long long
+				ft_wup(unsigned long long
+					write
+	X	t_write_hex_cap(va_arg(args, unsigned int)));
+			ft_write_uns_base(unsigned long long
+				ft_wup(unsigned long long
+					write
+	va_end
